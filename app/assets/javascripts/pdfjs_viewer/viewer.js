@@ -6457,6 +6457,11 @@ var pdfjsWebLibs;
       return;
      }
      var fileOrigin = new URL(file, window.location.href).origin;
+     console.log('fileOrigin', fileOrigin);
+     console.log('viewerOrigin', viewerOrigin);
+     if (fileOrigin !== viewerOrigin) {	
+      throw new Error('file origin does not match viewer\'s');	
+     }
     } catch (e) {
      var message = e && e.message;
      var loadingErrorMessage = mozL10n.get('loading_error', null, 'An error occurred while loading the PDF.');
