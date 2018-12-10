@@ -6460,7 +6460,7 @@ var pdfjsWebLibs;
      console.log('fileOrigin', fileOrigin);
      console.log('viewerOrigin', viewerOrigin);
      if (fileOrigin !== viewerOrigin) {	
-      throw new Error('file origin does not match viewer\'s');	
+      throw new Error(fileOrigin + '\n does not match ' + viewerOrigin);	
      }
     } catch (e) {
      var message = e && e.message;
